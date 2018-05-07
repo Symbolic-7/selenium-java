@@ -91,8 +91,8 @@ public class AttributeCssTest5_2 extends BaseTest {
         assertEquals(salePriceMain, salePriceCart);
         assertNotEquals(PriceMainFont, salePriceMainFont);
         assertNotEquals(PriceCartFont, salePriceCartFont);
-        assert PriceMainFontValueInt<=salePriceMainFontValueInt;
-        assert PriceCartFontValueInt<=salePriceCartFontValueInt;
+        assert PriceMainFontValueInt <= salePriceMainFontValueInt;
+        assert PriceCartFontValueInt <= salePriceCartFontValueInt;
 
     }
 }
