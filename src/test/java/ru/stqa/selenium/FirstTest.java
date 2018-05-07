@@ -4,6 +4,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
@@ -28,8 +31,16 @@ public class FirstTest extends BaseTest {
         String priceMain = driver.findElement(By.cssSelector("#box-campaigns .regular-price")).getAttribute("textContent");
         String priceMainTag = driver.findElement(By.cssSelector("#box-campaigns .regular-price")).getTagName();
         assertEquals("s", priceMainTag);
+
         String priceMainColor = driver.findElement(By.cssSelector("#box-campaigns .regular-price")).getCssValue("color");
-        System.out.println(priceMainColor);
+        //System.out.println(priceMainColor);
+        String priceMainColorValue1 = priceMainColor.replace("rgba(", "");
+        String priceMainColorValue2 = priceMainColorValue1.replace(")", "");
+        System.out.println(priceMainColorValue2);
+        String[] colorA = priceMainColorValue2.split(", ");
+        assertEquals(colorA[0], colorA[1]);
+        assertEquals(colorA[0], colorA[2]);
+
         String PriceMainFont = driver.findElement(By.cssSelector("#box-campaigns .regular-price")).getCssValue("font-size");
         System.out.println(PriceMainFont);
 
